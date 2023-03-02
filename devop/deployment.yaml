@@ -17,5 +17,4 @@ spec:
         imagePullPolicy: Always
         image: ankur2411/kubedemo:2.0
         ports:
-        - containerPort: 8080		
-		
+        - containerPort: 8080
