@@ -6,7 +6,7 @@ metadata:
     project: kube-demo
 spec:
   containers:
-    - name: kubedemo
-      image: ankur2411/kubedemo:2.0
-      ports:
-        - containerPort: 8080
+  - name: kubedemo
+    image: ankur2411/kubedemo:2.0
+    ports:
+    - containerPort: 8080

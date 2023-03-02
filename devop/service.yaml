@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: kubedemo-lb
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 8085
+    targetPort: 8080
+  selector:
+    project: kube-demo
