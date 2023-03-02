@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Deployment
+metadata:
+  name: kubedemo-deploy
+spec:
+  replicas: 5
+  selector:
+    matchLables:
+      project: kube-demo
+  template:
+    metadata:
+      labels: 
+		project: kube-demo
+    spec:
+      containers:
+      - name: kubedemo
+        imagePullPolicy: Always
+        image: ankur2411/kubedemo:2.0
+        ports:
+        - containerPort: 8080		
+		
