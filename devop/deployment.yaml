@@ -7,6 +7,12 @@ spec:
   selector:
     matchLabels:
       project: kube-demo
+  minReadySeconds: 20 
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
   template:
     metadata:
       labels: 
@@ -15,6 +21,6 @@ spec:
       containers:
       - name: kubedemo
         imagePullPolicy: Always
-        image: ankur2411/kubedemo:2.0
+        image: ankur2411/kubedemo:3.0
         ports:
         - containerPort: 8080
