@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: kubedemo-deploy
 spec:
-  replicas: 6
+  replicas: 5
   selector:
     matchLabels:
       project: kube-demo
