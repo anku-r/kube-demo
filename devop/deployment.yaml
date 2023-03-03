@@ -1,4 +1,4 @@
-apiVersion: apps/v1
+apiVersion: v2
 kind: Deployment
 metadata:
   name: kubedemo-deploy
@@ -24,3 +24,15 @@ spec:
         image: ankur2411/kubedemo:3.0
         ports:
         - containerPort: 8080
+---
+apiVersion: v2
+kind: Service
+metadata:
+  name: kubedemo-lb
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 8080
+    targetPort: 8080
+  selector:
+    project: kube-demo
