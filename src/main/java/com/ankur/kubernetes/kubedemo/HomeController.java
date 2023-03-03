@@ -45,6 +45,6 @@ public class HomeController {
     }
     
     private String getUsername(Principal user) {
-	return user == null ? "Random user" : user.getName();
+	return user == null ? "Unauthenticated user" : user.getName();
     }
 }
