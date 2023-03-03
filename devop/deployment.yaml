@@ -5,7 +5,7 @@ metadata:
 spec:
   replicas: 5
   selector:
-    matchLables:
+    matchLabels:
       project: kube-demo
   template:
     metadata:
