@@ -21,6 +21,6 @@ spec:
       containers:
       - name: kubedemo
         imagePullPolicy: Always
-        image: ankur2411/kubedemo:3.0
+        image: ankur2411/kubedemo:2.0
         ports:
         - containerPort: 8080
