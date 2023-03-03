@@ -34,7 +34,6 @@ public class HomeController {
         data.put("datetime", Instant.now());
         data.put("host", server.getHostName());
         data.put("address", server.getHostAddress());
-        data.put("port", env.getProperty("server.port"));
         data.put("user", getUsername(user));
         return data;
     }
