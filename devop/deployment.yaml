@@ -7,7 +7,7 @@ spec:
   selector:
     matchLabels:
       project: kube-demo
-  minReadySeconds: 20 
+  minReadySeconds: 10 
   strategy:
     type: RollingUpdate
     rollingUpdate:

@@ -17,21 +17,21 @@ public class SecurityConfig  {
         UserDetails ankur =
                 User.withDefaultPasswordEncoder()
                         .username("ankur")
-                        .password("ankur1993")
+                        .password("abcd1234")
                         .roles("USER")
                         .build();
 
         UserDetails nginx =
                 User.withDefaultPasswordEncoder()
                         .username("nginx")
-                        .password("ankur1993")
+                        .password("abcd1234")
                         .roles("USER")
                         .build();
 
         UserDetails admin =
                 User.withDefaultPasswordEncoder()
                         .username("admin")
-                        .password("ankur1993")
+                        .password("abcd1234")
                         .roles("ADMIN")
                         .build();
 
