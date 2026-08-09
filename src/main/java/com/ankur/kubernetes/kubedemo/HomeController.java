@@ -43,8 +43,8 @@ public class HomeController {
         logger.info("{} accessing application API", getUsername(user));
         return "Port " + env.getProperty("server.port") + ": No API yet. Back to <a href='/'>home</a>";
     }
-    
+
     private String getUsername(Principal user) {
-	return user == null ? "Unauthenticated user" : user.getName();
+        return user == null ? "Unauthenticated user" : user.getName();
     }
 }
