@@ -2,7 +2,7 @@ replicaCount: 5
 
 image:
   repository: ankur2411/kubedemo
-  tag: "2.0.0"
+  tag: "2.0.1"
   pullPolicy: Always
 
 service:
