@@ -1,0 +1,33 @@
+replicaCount: 5
+
+image:
+  repository: ankur2411/kubedemo
+  tag: "2.0.0"
+  pullPolicy: Always
+
+service:
+  type: LoadBalancer
+  port: 8080
+  targetPort: 8080
+
+resources:
+  requests:
+    cpu: "100m"
+    memory: "256Mi"
+  limits:
+    cpu: "500m"
+    memory: "512Mi"
+
+livenessProbe:
+  path: /health/liveness
+  port: 8080
+  initialDelaySeconds: 30
+  periodSeconds: 10
+  failureThreshold: 3
+
+readinessProbe:
+  path: /health/readiness
+  port: 8080
+  initialDelaySeconds: 10
+  periodSeconds: 10
+  failureThreshold: 3
