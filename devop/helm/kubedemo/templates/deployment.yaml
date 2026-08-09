@@ -24,6 +24,12 @@ spec:
       - name: kubedemo
         image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
         imagePullPolicy: {{ .Values.image.pullPolicy }}
+        env:
+        - name: SECURITY_USERS
+          valueFrom:
+            secretKeyRef:
+              name: "{{- if .Values.securitySecret.create -}}{{ include "kubedemo.fullname" . }}-security{{- else -}}{{ .Values.securitySecret.name }}{{- end -}}"
+              key: "{{ .Values.securitySecret.key }}"
         ports:
         - containerPort: {{ .Values.service.targetPort }}
         resources:

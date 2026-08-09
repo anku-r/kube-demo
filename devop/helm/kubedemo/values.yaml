@@ -2,7 +2,7 @@ replicaCount: 5
 
 image:
   repository: ankur2411/kube-demo
-  tag: "2.0.1"
+  tag: "2.0.2"
   pullPolicy: Always
 
 service:
@@ -17,6 +17,12 @@ resources:
   limits:
     cpu: "500m"
     memory: "512Mi"
+
+securitySecret:
+  create: false
+  name: "kubedemo-security"
+  key: "SECURITY_USERS"
+  securityUsers: ""
 
 livenessProbe:
   path: /health/liveness

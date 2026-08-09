@@ -21,7 +21,13 @@ spec:
       containers:
       - name: kubedemo
         imagePullPolicy: Always
-        image: ankur2411/kube-demo:2.0.0
+        image: ankur2411/kube-demo:2.0.2
+        env:
+        - name: SECURITY_USERS
+          valueFrom:
+            secretKeyRef:
+              name: kubedemo-security
+              key: SECURITY_USERS
         ports:
         - containerPort: 8080
         resources:
