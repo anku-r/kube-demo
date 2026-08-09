@@ -38,6 +38,22 @@ public class HomeController {
         return data;
     }
 
+    @RequestMapping(path = "/health/readiness", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Map<String, Object> readiness() {
+        Map<String, Object> data = new LinkedHashMap<>();
+        data.put("status", "READY");
+        data.put("time", Instant.now());
+        return data;
+    }
+
+    @RequestMapping(path = "/health/liveness", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Map<String, Object> liveness() {
+        Map<String, Object> data = new LinkedHashMap<>();
+        data.put("status", "ALIVE");
+        data.put("time", Instant.now());
+        return data;
+    }
+
     @RequestMapping(path = "/api")
     public String api(Principal user) {
         logger.info("{} accessing application API", getUsername(user));

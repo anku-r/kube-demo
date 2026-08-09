@@ -1,4 +1,4 @@
-FROM adoptopenjdk/openjdk11
-ARG JAR_FILE=target/*.jar
-COPY ${JAR_FILE} app.jar
-ENTRYPOINT ["java","-jar","/app.jar"]
+FROM eclipse-temurin:21-jre-jammy
+WORKDIR /app
+COPY target/kube-demo-*.jar app.jar
+ENTRYPOINT ["java", "-jar", "/app/app.jar"]
